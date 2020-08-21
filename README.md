@@ -1,26 +1,16 @@
 # Spring boot starter for [Apache Pulsar](https://pulsar.apache.org/)
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.majusko/pulsar-java-spring-boot-starter/badge.svg)](https://search.maven.org/search?q=g:io.github.majusko)
 [![Release](https://jitpack.io/v/majusko/pulsar-java-spring-boot-starter.svg)](https://jitpack.io/#majusko/pulsar-java-spring-boot-starter)
 [![Build Status](https://travis-ci.com/majusko/pulsar-java-spring-boot-starter.svg?branch=master)](https://travis-ci.com/majusko/pulsar-java-spring-boot-starter)
 [![Test Coverage](https://codecov.io/gh/majusko/pulsar-java-spring-boot-starter/branch/master/graph/badge.svg)](https://codecov.io/gh/majusko/pulsar-java-spring-boot-starter/branch/master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Join the chat at https://gitter.im/pulsar-java-spring-boot-starter/community](https://badges.gitter.im/pulsar-java-spring-boot-starter/community.svg)](https://gitter.im/pulsar-java-spring-boot-starter/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-> Library is still not ready for production - expected in January 2020
 
 ## Quick Start
 
 Simple start consist only from 3 simple steps.
 
 #### 1. Add Maven dependency
-
-```xml
-<repositories>
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
-</repositories>
-```
 
 ```xml
 <dependency>
@@ -78,6 +68,10 @@ class MyConsumer {
 }
 ```
 
+## Example project
+
+#### [Java Pulsar Example Project](https://github.com/majusko/java-pulsar-example)
+
 ## Documentation
 
 ### Configuration
@@ -93,6 +87,7 @@ pulsar.connectionTimeoutSec=10
 pulsar.operationTimeoutSec=15
 pulsar.startingBackoffIntervalMs=100
 pulsar.maxBackoffIntervalSec=10
+pulsar.consumerNameDelimiter=
 ```
 
 Properties explained:
@@ -106,11 +101,18 @@ Properties explained:
 - `pulsar.operationTimeoutSec` - Operation timeout.
 - `pulsar.startingBackoffIntervalMs` - Duration of time for a backoff interval (Retry algorithm).
 - `pulsar.maxBackoffIntervalSec` - The maximum duration of time for a backoff interval (Retry algorithm).
+- `pulsar.consumerNameDelimiter` - Consumer names are connection of bean name and method with a delimiter. By default there is no delimiter and words are connected together.
 
 ## Contributing
 
 All contributors are welcome. If you never contributed to the open-source, start with reading the [Github Flow](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/github-flow).
 
+### Roadmap task
+1. Pick a task from simple roadmap in [Projects](https://github.com/majusko/pulsar-java-spring-boot-starter/projects) section.
+2. Create a [pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) with reference (url) to the task inside the [Projects](https://github.com/majusko/pulsar-java-spring-boot-starter/projects) section.
+3. Rest and enjoy the great feeling of being a contributor.
+
+### Hotfix
 1. Create an [issue](https://help.github.com/en/github/managing-your-work-on-github/about-issues)
 2. Create a [pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) with reference to the issue
 3. Rest and enjoy the great feeling of being a contributor.
